@@ -20,6 +20,16 @@ app.get('/users', function(req, res) {
   res.send('Hola MAMA estoy haciendo Usuarios');
 });
 
+app.get('/get_form', function(req, res) {
+  var data = {
+    first: req.query.first,
+    last: req.query.last
+  };
+
+  console.log(data);
+  res.send(JSON.stringify(data));
+});
+
 
 var server = app.listen(3000, function() {
   var port = server.address().port;
