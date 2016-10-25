@@ -6,4 +6,7 @@ app.get('/', function(req, res) {
 
 });
 
-app.listen(3000);
+var server = app.listen(8000, function() {
+  var port = server.address().port;
+  console.log('Servidor ejecutando en el puerto:', port)
+});
