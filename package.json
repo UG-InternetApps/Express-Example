@@ -1,0 +1,11 @@
+{
+  "name": "express-dicis",
+  "version": "1.0.0",
+  "description": "Express JS Example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Carlos Ruiz <JuanCrg90@gmail.com>",
+  "license": "MIT"
+}
