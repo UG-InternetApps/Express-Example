@@ -3,10 +3,19 @@ var app = express();
 
 app.get('/', function(req, res) {
   res.send('Hola MAMA estoy haciendo express');
-
 });
 
-var server = app.listen(8000, function() {
+app.post('/', function(req, res) {
+  console.log('Hola mama acabo de hacer un POST');
+  res.send('Hola mama acabo de hacer un POST');
+});
+
+app.get('/users', function(req, res) {
+  res.send('Hola MAMA estoy haciendo Usuarios');
+});
+
+
+var server = app.listen(3000, function() {
   var port = server.address().port;
-  console.log('Servidor ejecutando en el puerto:', port)
+  console.log('Servidor ejecutando en el puerto:', port);
 });
