@@ -1,7 +1,14 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+
+
 var app = express();
 
+// Create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false  });
+
 app.use(express.static('public'));
+
 
 app.get('/index.html', function(req, res) {
   res.sendFile(__dirname + '/' + 'index.html');
@@ -28,6 +35,19 @@ app.get('/get_form', function(req, res) {
 
   console.log(data);
   res.send(JSON.stringify(data));
+});
+
+app.post('/process_post', urlencodedParser, function(req, res) {
+
+  var data = {
+    first: req.body.first,
+    last: req.body.last
+  };
+
+  console.log(data);
+  res.send(JSON.stringify(data));
+
+
 });
 
 
