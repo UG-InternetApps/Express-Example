@@ -8,7 +8,17 @@
     <h1>Hola mamá esté un HTML</h1>
     <img src="images/UG-Github.png" alt="UG LOGO GITHUB">
 
-    
+    <h2>Multipart Upload</h2>
+    <form action="profile" method="POST" enctype="multipart/form-data">
+      <label for="avatar">Avatar</label>
+      <input id="avatar" name="avatar" type="file">
+      <button type="submit">Enviar</button>
+    </form>
+
+    <br>
+    <br>
+    <br>
+
     <h2>GET FORM</h2>
     <form action="get_form" method="GET">
       <label for="first">First Name: </label>
@@ -21,7 +31,7 @@
     <br>
     <br>
     <br>
-    
+
     <h2>POST FORM</h2>
     <form action="process_post" method="POST">
       <label for="first">First Name: </label>
@@ -29,8 +39,8 @@
       <label for="last">Last Name: </label>
       <input type="text" name="last" placeholder="Tu Apellido">
       <button type="submit">Enviar</button>
-
     </form>
+
 
 
   </body>

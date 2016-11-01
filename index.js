@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-
+var multer = require('multer');
+var upload = multer({ dest: './uploads/' });
 
 var app = express();
 
@@ -51,8 +52,11 @@ app.post('/process_post', urlencodedParser, function(req, res) {
 
   console.log(data);
   res.send(JSON.stringify(data));
+});
 
-
+app.post('/profile', upload.single('avatar') , function(req, res) {
+  console.log(req.file);
+  res.send(req.file);
 });
 
 
