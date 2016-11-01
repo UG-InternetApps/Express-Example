@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 
 
 var app = express();
@@ -8,9 +9,13 @@ var app = express();
 var urlencodedParser = bodyParser.urlencoded({ extended: false  });
 
 app.use(express.static('public'));
+app.use(cookieParser());
 
 
 app.get('/index.html', function(req, res) {
+  console.log('Cookies: ', req.cookies);
+  console.log('user: ', req.cookies.username);
+  console.log('password: ', req.cookies.password);
   res.sendFile(__dirname + '/' + 'index.html');
 });
 
